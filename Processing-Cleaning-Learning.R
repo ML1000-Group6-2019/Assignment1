@@ -50,6 +50,8 @@ str(HDMA_Processed)
 
 #############  Loan Application Status in Washinton   #####################
 require(dplyr)
+detach("package:Hmisc", unload = TRUE)
+
 Loan_status <- HDMA_Processed %>%
   group_by(action_taken_name) %>%
   summarize(count=n()) %>%
